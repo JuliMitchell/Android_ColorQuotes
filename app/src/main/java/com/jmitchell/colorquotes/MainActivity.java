@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -37,5 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickNuevaCita(View view){
         Log.d(TAG, "Mensaje enviado desde el evento");
+    }
+
+    public int getRandomNumber(int max){
+        Random random = new Random();
+        random.setSeed(System.currentTimeMillis());
+        int randomNumber = random.nextInt(max);
+        return randomNumber;
     }
 }
