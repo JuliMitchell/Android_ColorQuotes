@@ -25,12 +25,17 @@ public class MainActivity extends AppCompatActivity {
         autorTextView = findViewById(R.id.autorTextView);
         nuevaCitaButton = findViewById(R.id.nuevaCitaButton);
 
+        /*
         nuevaCitaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "Ouch, me tocaste!!!");
             }
         });
+        */
+    }
 
+    public void clickNuevaCita(View view){
+        Log.d(TAG, "Mensaje enviado desde el evento");
     }
 }
