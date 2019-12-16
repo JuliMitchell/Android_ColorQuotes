@@ -62,13 +62,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickNuevaCita(View view){
-        int randomNumber = Utils.getRandomNumber(autores.length);
 
-        String cita = citas[randomNumber];
-        String autor = autores[randomNumber];
+        GeneradorCitas generadorCitas = new GeneradorCitas();
+        Cita cita = generadorCitas.obtenerCita();
 
-        citaTextView.setText(cita);
-        autorTextView.setText(autor);
+        citaTextView.setText(cita.getTexto());
+        autorTextView.setText(cita.getAutor());
 
     }
 
