@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickNuevaCita(View view){
-        int randomNumber = getRandomNumber(autores.length);
+        int randomNumber = Utils.getRandomNumber(autores.length);
 
         String cita = citas[randomNumber];
         String autor = autores[randomNumber];
@@ -72,10 +72,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public int getRandomNumber(int max){
-        Random random = new Random();
-        random.setSeed(System.currentTimeMillis());
-        int randomNumber = random.nextInt(max);
-        return randomNumber;
-    }
 }
