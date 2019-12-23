@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "Ouch, me tocaste!!!");
             }
         });
-        */
+
 
         autores = new String[5];
         citas = new String[5];
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         autores[4] = "Irving Berlin";
         citas[4] = "El sabio no dice lo que sabe, y el necio no sabe lo que dice.";
 
+        */
 
     }
 
