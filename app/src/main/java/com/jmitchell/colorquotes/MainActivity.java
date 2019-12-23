@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
 
         autorTextView.setText(cita.getAutor());
         autorTextView.setTextColor(cita.getColor());
+
+        nuevaCitaButton.setBackgroundColor(cita.getColor());
     }
 
 }
