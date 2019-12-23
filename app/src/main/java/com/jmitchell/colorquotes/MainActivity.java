@@ -1,5 +1,6 @@
 package com.jmitchell.colorquotes;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         autorTextView = findViewById(R.id.autorTextView);
         nuevaCitaButton = findViewById(R.id.nuevaCitaButton);
 
+        /*
         if(savedInstanceState != null){
             int color = savedInstanceState.getInt(COLOR);
             citaTextView.setTextColor(color);
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             citaTextView.setText(savedInstanceState.getString(CITA));
             autorTextView.setText(savedInstanceState.getString(AUTOR));
         }
-
+        */
 
         /*
         nuevaCitaButton.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +76,20 @@ public class MainActivity extends AppCompatActivity {
         citas[4] = "El sabio no dice lo que sabe, y el necio no sabe lo que dice.";
 
         */
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        int color = savedInstanceState.getInt(COLOR);
+        citaTextView.setTextColor(color);
+        autorTextView.setTextColor(color);
+        nuevaCitaButton.setBackgroundColor(color);
+
+        citaTextView.setText(savedInstanceState.getString(CITA));
+        autorTextView.setText(savedInstanceState.getString(AUTOR));
 
     }
 
