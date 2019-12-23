@@ -4,6 +4,7 @@ public class Cita {
 
     private String texto;
     private String autor;
+    private int color;
 
     public String getTexto() {
         return texto;
@@ -19,5 +20,13 @@ public class Cita {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 }

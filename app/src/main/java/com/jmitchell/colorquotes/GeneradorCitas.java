@@ -1,8 +1,11 @@
 package com.jmitchell.colorquotes;
 
+import android.graphics.Color;
+
 public class GeneradorCitas {
 
     private Cita[] citas;
+    private int[] colorsArray = {Color.CYAN,Color.RED,Color.BLACK,Color.GRAY,Color.YELLOW,Color.GREEN, Color.MAGENTA};
 
     public GeneradorCitas(){
         citas = new Cita[5];
@@ -31,6 +34,14 @@ public class GeneradorCitas {
 
     public Cita obtenerCita(){
         int randomNumber = Utils.getRandomNumber(citas.length);
+
+        int color = colorsArray[Utils.getRandomNumber(citas.length)];
+
+        Cita cita = citas[randomNumber];
+
+        cita.setColor(color);
+
         return citas[randomNumber];
     }
+
 }

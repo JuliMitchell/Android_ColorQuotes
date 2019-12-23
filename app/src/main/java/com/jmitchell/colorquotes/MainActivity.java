@@ -68,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
         Cita cita = generadorCitas.obtenerCita();
 
         citaTextView.setText(cita.getTexto());
-        autorTextView.setText(cita.getAutor());
+        citaTextView.setTextColor(cita.getColor());
 
+        autorTextView.setText(cita.getAutor());
+        autorTextView.setTextColor(cita.getColor());
     }
 
 }
