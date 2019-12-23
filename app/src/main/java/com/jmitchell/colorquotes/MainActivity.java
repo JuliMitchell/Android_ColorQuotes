@@ -1,5 +1,6 @@
 package com.jmitchell.colorquotes;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
+    private static final String CITA = "cita";
+    private static final String AUTOR = "autor";
+    private static final String COLOR = "color";
 
     private TextView citaTextView;
     private TextView autorTextView;
@@ -29,6 +33,17 @@ public class MainActivity extends AppCompatActivity {
         citaTextView = findViewById(R.id.citaTextView);
         autorTextView = findViewById(R.id.autorTextView);
         nuevaCitaButton = findViewById(R.id.nuevaCitaButton);
+
+        if(savedInstanceState != null){
+            int color = savedInstanceState.getInt(COLOR);
+            citaTextView.setTextColor(color);
+            autorTextView.setTextColor(color);
+            nuevaCitaButton.setBackgroundColor(color);
+
+            citaTextView.setText(savedInstanceState.getString(CITA));
+            autorTextView.setText(savedInstanceState.getString(AUTOR));
+        }
+
 
         /*
         nuevaCitaButton.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +76,18 @@ public class MainActivity extends AppCompatActivity {
         */
 
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString(CITA, citaTextView.getText().toString());
+
+        outState.putString(AUTOR, autorTextView.getText().toString());
+
+        outState.putInt(COLOR, citaTextView.getCurrentTextColor());
+    }
+
 
     public void clickNuevaCita(View view){
 
